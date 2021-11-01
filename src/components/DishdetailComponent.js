@@ -21,19 +21,16 @@ class CommentForm extends Component {
             isCommentFormModalOpen: false
         };
 
-        this.toggleCommentFormModal = this.toggleCommentFormModal.bind(this);
-        this.handleCommentFormSubmit = this.handleCommentFormSubmit.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
-    handleCommentFormSubmit(values) {
-        console.log("Current State is: " + JSON.stringify(values));
-        alert("Current State is: " + JSON.stringify(values));
-
-
+    handleSubmit(values) {
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
     }
 
-    toggleCommentFormModal() {
+    toggleModal() {
         this.setState({
             isCommentFormModalOpen: !this.state.isCommentFormModalOpen
         });
@@ -43,17 +40,17 @@ class CommentForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <Button outline onClick={this.toggleCommentFormModal}>
+                <Button outline onClick={this.toggleModal}>
                     <span className="fa fa-comments fa-lg"></span> Submit Comment
                 </Button>
 
 
                 
-                <Modal isOpen={this.state.isCommentFormModalOpen} toggle={this.toggleCommentFormModal} >
-                    <ModalHeader toggle={this.toggleCommentFormModal}> Submit Comment </ModalHeader>
+                <Modal isOpen={this.state.isCommentFormModalOpen} toggle={this.toggleModal} >
+                    <ModalHeader toggle={this.toggleModal}> Submit Comment </ModalHeader>
                     <ModalBody>
 
-                        <LocalForm onSubmit={(values) => this.handleCommentFormSubmit(values)}>
+                        <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
 
                             
                             <Row className="form-group">
@@ -176,7 +173,7 @@ class CommentForm extends Component {
             );      
     }
 
-    function RenderComments({dish,comments}){
+    function RenderComments({comments, addComment, dishId}){
         if (comments == null) {
             return (<div></div>);
         }
@@ -203,7 +200,7 @@ class CommentForm extends Component {
                     {cmnts}
                 </ul>
 
-                <CommentForm dish={dish} comments={comments} />
+                <CommentForm dishId={dishId} addComment={addComment} />
 
             </div>
         );
@@ -234,7 +231,7 @@ class CommentForm extends Component {
                         <RenderDish dish={props.dish} />
                     </div>
                     <div className="col-12 col-md-5 m-1">
-                        <RenderComments comments={props.comments} />
+                    <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id}/>
                     </div>
                 </div>
                 </div>
