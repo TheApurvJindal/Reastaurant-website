@@ -187,10 +187,7 @@ class CommentForm extends Component {
         if (comments == null) {
             return (<div></div>);
         }
-
-        <Stagger in></Stagger>
-
-         
+                
         return (
             <div className='col-12 m-1'>
                 <h4> Comments </h4>
@@ -199,17 +196,16 @@ class CommentForm extends Component {
                         {comments.map((comment) => {
                             return (
                                 <Fade in>
-                                <li key={comment.id}>
-                                <p>{comment.comment}</p>
-                                <p>-- {comment.author},
-                                &nbsp;
-                                {new Intl.DateTimeFormat('en-US', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: '2-digit'
-                                }).format(new Date(comment.date))}
-                                </p>
-                                </li>
+                                    <li key={comment.id}>
+                                    <p>{comment.comment}</p>
+                                    <p>-- {comment.author}, &nbsp;
+                                    {new Intl.DateTimeFormat('en-US', {
+                                        year: 'numeric',
+                                        month: 'long',
+                                        day: '2-digit'
+                                    }).format(new Date(comment.date))}
+                                    </p>
+                                    </li>
                                 </Fade>
                             );
                         })}
