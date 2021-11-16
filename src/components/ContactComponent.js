@@ -50,16 +50,25 @@ class Contact extends Component {
                     <div className="col-12 col-sm-4 offset-sm-1">
                             <h5>Our Address</h5>
                             <address>
-                            121, Clear Water Bay Road<br />
-                            Clear Water Bay, Kowloon<br />
-                            HONG KONG<br />
+                            Plot No-1, Rohni<br />
+		                    CH Bhim Singh Nambardar Marg, Rohni-110086<br />
+		                    DELHI<br />
                             <i className="fa fa-phone"></i>: +852 1234 5678<br />
                             <i className="fa fa-fax"></i>: +852 8765 4321<br />
                             <i className="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
                             </address>
                     </div>
                     <div className="col-12 col-sm-6 offset-sm-1">
-                        <h5>Map of our Location</h5>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d224060.7493748547!2d77.05400405350672!3d28.6612394269484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smaharaja%20agrasen%20institute%20of%20technology!5e0!3m2!1sen!2sin!4v1636627000596!5m2!1sen!2sin"
+                        width="450"
+                        height="450"
+                        frameBorder="0"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        aria-hidden="false"
+                        tabIndex="0"
+                    />
                     </div>
                     <div className="col-12 col-sm-11 offset-sm-1">
                         <div className="btn-group" role="group">

@@ -9,7 +9,7 @@ function RenderLeader({ leader }) {
     return (
         <Media className="mt-5">
             <Media left className="mr-5">
-                <Media object src={baseUrl + leader.image} alt={leader.name} />
+                <Media object src={baseUrl + leader.image} alt={leader.name} width="150" height="150" />
             </Media>
             <Media body>
                 <Media heading>{leader.name}</Media>

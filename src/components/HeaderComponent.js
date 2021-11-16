@@ -36,7 +36,7 @@ class Header extends Component {
 
       handleLogin(event) {
         this.toggleModal();
-        alert("Username: " + this.username.value + " Password: " + this.password.value + " Remember: " + this.remember.checked);
+        alert("Number of guests: " + this.guests.value + "Date and Time: " + this.date.value + this.time.value + " Remember: " + this.remember.checked);
         event.preventDefault();
 
     }
@@ -65,10 +65,10 @@ class Header extends Component {
                                 </Nav>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <Button onClick={this.toggleNodal} >
+                                    <Button onClick={this.toggleNodal}  className="btn btn-warning btn-large">
                                         <span className=" fa fa-sign-in fa-lg">                                     
                                         </span>
-                                        Login
+                                        Reserve
                                     </Button>
                                 </NavItem>
                             </Nav> 
@@ -83,6 +83,13 @@ class Header extends Component {
                                 <h1>Ristorante con Fusion</h1>
                                 <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                             </div>
+                            <div className="col-12 col-sm-6 row">
+                                <div className="col-sm-6">
+                                    <img src='assets/images/logo.png'/>
+                                   
+                                </div>
+                               
+                            </div>
                         </div>
                     </div>
                 </Jumbotron>
@@ -94,23 +101,43 @@ class Header extends Component {
                     <ModalBody>
                     <Form onSubmit={this.handleLogin}>
                             <FormGroup>
-                                <Label htmlFor="username">Username</Label>
-                                <Input type="text" id="username" name="username"
-                                    innerRef={(input) => this.username = input} />
+                                <h5>Number of Guests</h5>
+
+                                <label htmlFor="1">1</label>
+                                <Input type="radio" id="guests" name="guests" innerRef={(input) => this.guests = input} />
+
+                                <label htmlFor="1">2</label>
+                                <Input type="radio" id="guests" name="guests" innerRef={(input) => this.guests = input} />
+
+                                <label htmlFor="1">3</label>
+                                <Input type="radio" id="guests" name="guests" innerRef={(input) => this.guests = input} />
+
+                                <label htmlFor="1">4</label>
+                                <Input type="radio" id="guests" name="guests" innerRef={(input) => this.guests = input} />
+
+                                <label htmlFor="1">5</label>
+                                <Input type="radio" id="guests" name="guests" innerRef={(input) => this.guests = input} />
+
+                                <label htmlFor="1">6</label>
+                                <Input type="radio" id="guests" name="guests" innerRef={(input) => this.guests = input} />
+
+    
+
                             </FormGroup>
                             <FormGroup>
-                                <Label htmlFor="password">Password</Label>
-                                <Input type="password" id="password" name="password"
-                                    innerRef={(input) => this.password = input}  />
+                                <Label htmlFor="dateandtime">Date and Time</Label>
+                                <Input type="text" id="date" name="date" innerRef={(input) => this.date = input}  />
+                                <Input type="text" id="time" name="time" innerRef={(input) => this.time = input}  />
+                                
                             </FormGroup>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" name="remember"
                                     innerRef={(input) => this.remember = input}  />
-                                    Remember me
+                                    Remember my choices
                                 </Label>
                             </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Login</Button>
+                            <Button type="submit" value="submit" color="primary">Reserve</Button>
                         </Form>
 
                     </ModalBody>
