@@ -2,7 +2,7 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
-import { Fade,Stagger, FadeTransform } from 'react-animation-components';
+import { Fade,Stagger } from 'react-animation-components';
 import { Loading } from "./LoadingComponent";
 
 function RenderLeader({ leader }) {
@@ -39,10 +39,9 @@ function RenderContent({ leaders, isLoading, errMess }) {
 }
 
 function About(props) {
-
+// eslint-disable-next-line
     const leaders = props.leaders.map((leader) => {
-        return (
-            
+        return (            
                 <RenderLeader leader={leader} />
                            
         );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardText } from "reactstrap";
+import { Card, CardImg, CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardText } from "reactstrap";
 import { Link } from 'react-router-dom';
 import {   Button, Modal, ModalBody, ModalHeader, Label, Row, Col} from "reactstrap";
 import { Loading } from './LoadingComponent';
@@ -59,7 +59,7 @@ class CommentForm extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="rating" md={12} >Rating</Label>
                                 <Col md={12}>
-                                    <Control.select model=".rating"
+                                    <Control.Select model=".rating"
                                         className="form-control"
                                         name="rating"
                                         id="rating"
@@ -73,7 +73,7 @@ class CommentForm extends Component {
                                         <option>3</option>
                                         <option>4</option>
                                         <option>5</option>
-                                    </Control.select>
+                                    </Control.Select>
                                     <Errors
                                         className="text-danger"
                                         model=".author"
@@ -90,7 +90,7 @@ class CommentForm extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="author" md={12}> Your Name </Label>
                                 <Col md={12}>
-                                    <Control.text model=".author" id="author" name="author"
+                                    <Control.Text model=".author" id="author" name="author"
                                         placeholder="First Name"
                                         className="form-control"
                                         validators={{
@@ -117,7 +117,7 @@ class CommentForm extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="comment" md={12}>Comment</Label>
                                 <Col md={12}>
-                                    <Control.textarea model=".comment" id="comment" name="comment"
+                                    <Control.Textarea model=".comment" id="comment" name="comment"
                                         rows="6"
                                         className="form-control"
                                         validators={{

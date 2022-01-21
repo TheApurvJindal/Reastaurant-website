@@ -85,7 +85,7 @@ class Header extends Component {
                             </div>
                             <div className="col-12 col-sm-6 row">
                                 <div className="col-sm-6">
-                                    <img src='assets/images/logo.png'/>
+                                    <img src='assets/images/logo.png' alt='Logo'/>
                                    
                                 </div>
                                
